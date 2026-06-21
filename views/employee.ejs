@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 30px;
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            color: #2c3e50;
+        }
+
+        body > h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        body > a{
+            display: inline-block;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        body > a:hover{
+            background-color: #2980b9;
+        }
+
+        .container{
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .container h1{
+            font-size: 18px;
+            font-weight: normal;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .container a{
+            display: inline-block;
+            text-decoration: none;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .container a:hover{
+            background-color: #c0392b;
+        }
+
+        hr{
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>employee data profile</h1>
+
+    <a href="/">back to home</a>
+
+    <div class="container">
+
+    <% allemployee.forEach((element)=>{ %>
+
+        <h1><%= element.name %></h1>
+        <h1><%= element.email %></h1>
+        <h1><%= element.department %></h1>
+        <h1><%= element.salary %></h1>
+        <h1><%= element.experience %></h1>
+
+        <!-- <a href="/edit/<%=element._id %>"> id se edit</a> -->
+
+        <a href="/delete/<%=element._id %>">id se delete</a>
+
+        <hr>
+
+    <% }) %>
+
+    </div>
+
+</body>
+</html>

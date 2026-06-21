@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        form{
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 350px;
+        }
+
+        input{
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus{
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52,152,219,0.4);
+        }
+
+        button{
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #27ae60;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background-color: #219150;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/update/<%=data.id%>" method="POST">
+
+        <input type="text" name="name" placeholder="Enter Name">
+
+        <input type="email" name="email" placeholder="Enter Email">
+
+        <input type="text" name="department" placeholder="department">
+
+        <input type="number" name="salary" placeholder="salary">
+
+        <input type="number" name="experience" placeholder="experience">
+
+        <button type="submit">Update Employee</button>
+
+    </form>
+
+</body>
+</html>
